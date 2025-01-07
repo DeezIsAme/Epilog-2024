@@ -23,11 +23,24 @@ body {
   color: #fff;
 }
 
-.hidden {
+.hiddenLeft,
+.hiddenRight,
+.hiddenUnder {
   opacity: 0;
-  filter: blur(5px);
-  transform: translateX(-100%);
+  filter: blur(7px);
   transition: all 1s;
+}
+
+.hiddenLeft {
+  transform: translateX(-80%);
+}
+
+.hiddenRight {
+  transform: translateX(80%);
+}
+
+.hiddenUnder {
+  transform: translateY(80%);
 }
 
 .show {
@@ -35,6 +48,13 @@ body {
   filter: blur(0);
   transform: translateX(0);
 }
+
+/* .showRight {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+} */
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -324,6 +344,10 @@ body {
   font-size: 1.2rem;
   font-weight: 100;
   line-height: 1.6;
+}
+
+.memories .memories-desc {
+  max-width: 50rem;
 }
 
 .memories .row {

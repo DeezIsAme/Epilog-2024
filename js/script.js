@@ -1,4 +1,3 @@
-// autoplay mp3 onload website
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     console.log(entry);
@@ -10,9 +9,27 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-const hiddenElements = document.querySelectorAll(".hidden");
-hiddenElements.forEach((el) => observer.observe(el));
+const hiddenElementsLeft = document.querySelectorAll(".hiddenLeft");
+hiddenElementsLeft.forEach((el) => observer.observe(el));
 
+// const observerRight = new IntersectionObserver((entries) => {
+//   entries.forEach((entry) => {
+//     console.log(entry);
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add("show"); // Ganti id menjadi "show"
+//     } else {
+//       entry.target.classList.remove("show"); // Ganti id menjadi "hidden"
+//     }
+//   });
+// });
+
+const hiddenElementsRight = document.querySelectorAll(".hiddenRight");
+hiddenElementsRight.forEach((el) => observer.observe(el));
+
+const hiddenElementsUnder = document.querySelectorAll(".hiddenUnder");
+hiddenElementsUnder.forEach((el) => observer.observe(el));
+
+// autoplay mp3 onload website
 function playAudio() {
   const audio = document.getElementById("background-audio");
   audio.play();
